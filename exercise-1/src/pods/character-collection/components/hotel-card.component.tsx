@@ -10,22 +10,22 @@ import Avatar from '@material-ui/core/Avatar/Avatar';
 import IconButton from '@material-ui/core/IconButton/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { HotelEntityVm } from '../hotel-collection.vm';
+import { CharacterEntityVm } from '../character-collection.vm';
 import * as classes from './hotel-card.styles';
 
 interface Props {
-  hotel: HotelEntityVm;
+  hotel: CharacterEntityVm;
   onEdit: (id: string) => void;
   onDelete: (id: string) => void;
 }
 
-export const HotelCard: React.FunctionComponent<Props> = (props) => {
+export const CharacterCard: React.FunctionComponent<Props> = (props) => {
   const { hotel, onEdit, onDelete } = props;
 
   return (
     <Card>
       <CardHeader
-        avatar={<Avatar aria-label="Hotel">{hotel.rating}</Avatar>}
+        avatar={<Avatar aria-label="Character">{hotel.rating}</Avatar>}
         title={hotel.name}
         subheader={hotel.address}
       />
