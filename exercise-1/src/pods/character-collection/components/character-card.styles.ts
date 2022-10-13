@@ -5,3 +5,7 @@ export const content = css`
   flex-direction: column;
   justify-content: center;
 `;
+
+export const boldButton = css`
+  font-weight: bold;
+`;

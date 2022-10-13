@@ -2,8 +2,15 @@ import * as apiModel from './api/character-collection.api-model';
 import * as viewModel from './character-collection.vm';
 
 export const mapFromApiToVm = (
-  hotel: apiModel.CharacterEntityApi
+  character: apiModel.CharacterEntityApi
 ): viewModel.CharacterEntityVm => (
-  // TODO
-  null
+  {
+    id: character.id.toString(),
+    name: character.name,
+    origin: character.origin.name,
+    species: character.species,
+    image: character.image,
+    gender: character.gender,
+    type: character.type
+  }
 );

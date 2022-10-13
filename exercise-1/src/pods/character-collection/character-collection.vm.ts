@@ -1,3 +1,9 @@
 export interface CharacterEntityVm {
-  // TODO
+  id: string;
+  name: string;
+  species: string;
+  origin: string;
+  image: string;
+  type: string;
+  gender: string;
 }
