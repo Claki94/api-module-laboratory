@@ -6,5 +6,6 @@ const characterUrl = 'https://rickandmortyapi.com/api/character';
 export const getCharacterCollection = async () => {
   return axios.get<CharacterEntityAndInfoApi>(characterUrl)
     .then(axiosResponse => axiosResponse.data)
-    .then(data => data.results);
+    .then(data => data.results)
+    .catch(() => []);
 };

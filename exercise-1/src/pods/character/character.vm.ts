@@ -1,4 +1,13 @@
-export interface Character {
-  // TODO
+export interface CharacterVm {
+  id: string;
+  name: string;
+  status: string;
+  species: string;
+  type: string;
+  gender: string;
+  origin: string;
+  location: string;
+  image: string;
+  created: Date;
 }
 

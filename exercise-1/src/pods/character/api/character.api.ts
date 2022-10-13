@@ -1,6 +1,10 @@
-import { Character } from './character.api-model';
-import { Lookup } from 'common/models';
+import axios from 'axios';
+import { CharacterApi } from './character.api-model';
 
-export const getCharacter = async (id: string): Promise<Character> => {
-  return null;
+const characterUrl = 'https://rickandmortyapi.com/api/character';
+
+export const getCharacter = async (id: string) => {
+  return axios.get<CharacterApi>(`${characterUrl}/${id}`)
+    .then(axiosResponse => axiosResponse.data)
+    .catch(() => null);
 };
