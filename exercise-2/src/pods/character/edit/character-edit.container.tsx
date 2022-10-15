@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory, useParams } from 'react-router-dom';
+import { Alert } from '@material-ui/lab';
 import * as api from '../api';
 import {
   mapCharacterFromApiToVm,
@@ -30,9 +31,16 @@ export const CharacterEditContainer: React.FunctionComponent = (props) => {
   }, []);
 
   return (
-    <CharacterEditComponent
-      character={character}
-      onPatch={handlePatchCharacter}
-    />
+    <>
+      {character ? (
+        <CharacterEditComponent
+          character={character}
+          setCharacter={setCharacter}
+          onPatch={handlePatchCharacter}
+        />
+      ) : (
+        <Alert severity="error">404 - Character not found</Alert>
+      )}
+    </>
   );
 };

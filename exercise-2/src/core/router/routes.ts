@@ -11,12 +11,13 @@ export const switchRoutes: SwitchRoutes = {
   root: '/',
   characterCollection: '/characters',
   characterView: '/characters/view/:id',
-  characterEdit: '/characters/edit/:id'
+  characterEdit: '/characters/edit/:id',
 };
 
 type NavigationFunction = (id: string) => string;
 
-interface LinkRoutes extends Omit<SwitchRoutes, 'characterView' | 'characterEdit'> {
+interface LinkRoutes
+  extends Omit<SwitchRoutes, 'characterView' | 'characterEdit'> {
   characterView: NavigationFunction;
   characterEdit: NavigationFunction;
 }
@@ -24,5 +25,5 @@ interface LinkRoutes extends Omit<SwitchRoutes, 'characterView' | 'characterEdit
 export const linkRoutes: LinkRoutes = {
   ...switchRoutes,
   characterView: (id) => generatePath(switchRoutes.characterView, { id }),
-  characterEdit: (id) => generatePath(switchRoutes.characterView, { id }),
+  characterEdit: (id) => generatePath(switchRoutes.characterEdit, { id }),
 };

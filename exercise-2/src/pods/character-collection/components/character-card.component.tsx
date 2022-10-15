@@ -11,19 +11,17 @@ import * as classes from './character-card.styles';
 import Button from '@material-ui/core/Button';
 
 interface Props {
-  character: CharacterEntityVm,
+  character: CharacterEntityVm;
   onSeeDetails: (id: string) => void;
+  onEdit: (id: string) => void;
 }
 
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {
-  const { character, onSeeDetails } = props;
+  const { character, onSeeDetails, onEdit } = props;
 
   return (
     <Card>
-      <CardHeader
-        title={character.name}
-        subheader={character.origin}
-      />
+      <CardHeader title={character.name} subheader={character.origin} />
       <CardContent>
         <div className={classes.content}>
           <CardMedia
@@ -43,12 +41,21 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
         </div>
       </CardContent>
       <CardActions style={{ padding: '16px' }}>
-        <Button 
+        <Button
           className={classes.boldButton}
-          color="primary" 
-          variant="contained" 
-          onClick={() => onSeeDetails(character.id)}>
-            See Details
+          color="primary"
+          variant="contained"
+          onClick={() => onSeeDetails(character.id)}
+        >
+          See Details
+        </Button>
+        <Button
+          className={classes.boldButton}
+          color="primary"
+          variant="contained"
+          onClick={() => onEdit(character.id)}
+        >
+          Edit
         </Button>
       </CardActions>
     </Card>

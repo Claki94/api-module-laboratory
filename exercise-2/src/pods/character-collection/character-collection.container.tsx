@@ -5,7 +5,8 @@ import { CharacterCollectionComponent } from './character-collection.component';
 import { linkRoutes } from 'core/router';
 
 export const CharacterCollectionContainer = () => {
-  const { characterCollection, loadCharacterCollection } = useCharacterCollection();
+  const { characterCollection, loadCharacterCollection } =
+    useCharacterCollection();
   const history = useHistory();
 
   React.useEffect(() => {
@@ -14,9 +15,17 @@ export const CharacterCollectionContainer = () => {
 
   const handleSeeDetails = (id: string) => {
     history.push(linkRoutes.characterView(id));
-  }
+  };
+
+  const handleEdit = (id: string) => {
+    history.push(linkRoutes.characterEdit(id));
+  };
 
   return (
-    <CharacterCollectionComponent characterCollection={characterCollection} onSeeDetails={handleSeeDetails} />
+    <CharacterCollectionComponent
+      characterCollection={characterCollection}
+      onSeeDetails={handleSeeDetails}
+      onEdit={handleEdit}
+    />
   );
 };
