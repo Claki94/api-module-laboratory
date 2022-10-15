@@ -1,9 +1,9 @@
-import * as apiModel from './api/character.api-model';
+import * as apiModel from 'pods/character/api';
 import * as viewModel from './character.vm';
 
 export const mapCharacterFromApiToVm = (
-  character: apiModel.CharacterApi
-): viewModel.CharacterVm =>
+  character: apiModel.Character
+): viewModel.Character =>
   character
     ? {
         ...character,
@@ -15,9 +15,9 @@ export const mapCharacterFromApiToVm = (
     : null;
 
 export const mapCharacterFromVmToApi = (
-  character: viewModel.CharacterVm
-): apiModel.CharacterApi =>
+  character: viewModel.Character
+): apiModel.Character =>
   ({
     ...character,
     bestSentences: character.bestSentences,
-  } as unknown as apiModel.CharacterApi);
+  } as unknown as apiModel.Character);

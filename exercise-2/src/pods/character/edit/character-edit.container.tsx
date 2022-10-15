@@ -6,11 +6,11 @@ import {
   mapCharacterFromApiToVm,
   mapCharacterFromVmToApi,
 } from '../character.mappers';
-import { CharacterVm } from '../character.vm';
+import { Character } from '../character.vm';
 import { CharacterEditComponent } from './character-edit.component';
 
 export const CharacterEditContainer: React.FunctionComponent = (props) => {
-  const [character, setCharacter] = React.useState<CharacterVm>(null);
+  const [character, setCharacter] = React.useState<Character>(null);
   const { id } = useParams<{ id: string }>();
   const history = useHistory();
 
@@ -18,7 +18,7 @@ export const CharacterEditContainer: React.FunctionComponent = (props) => {
     api.getCharacter(id).then(mapCharacterFromApiToVm).then(setCharacter);
   };
 
-  const handlePatchCharacter = async (character: CharacterVm) => {
+  const handlePatchCharacter = async (character: Character) => {
     const { bestSentences } = mapCharacterFromVmToApi(character);
     api.patchCharacter(id, { bestSentences }).then((success) => {
       if (success) history.goBack();

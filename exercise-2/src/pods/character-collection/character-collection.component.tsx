@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as classes from './character-collection.styles';
-import { CharacterEntityVm } from './character-collection.vm';
+import { Character } from './character-collection.vm';
 import { CharacterCard } from './components/character-card.component';
 
 interface Props {
-  characterCollection: CharacterEntityVm[];
+  characterCollection: Character[];
   onSeeDetails: (id: string) => void;
   onEdit: (id: string) => void;
 }

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-import { CharacterVm } from '../character.vm';
+import { Character } from '../character.vm';
 import { BestSentencesComponent } from './components/best-sentences.component';
 import * as classes from './character-edit.styles';
 
 interface Props {
-  character: CharacterVm;
-  setCharacter: React.Dispatch<React.SetStateAction<CharacterVm>>;
-  onPatch: (character: CharacterVm) => Promise<void>;
+  character: Character;
+  setCharacter: React.Dispatch<React.SetStateAction<Character>>;
+  onPatch: (character: Character) => Promise<void>;
 }
 
 export const CharacterEditComponent: React.FunctionComponent<Props> = (

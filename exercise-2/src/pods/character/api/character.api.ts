@@ -1,21 +1,21 @@
 import axios from 'axios';
-import { CharacterApi } from './character.api-model';
+import { Character } from './character.api-model';
 
 const characterUrl = 'http://localhost:3000/characters';
 
-export const getCharacter = async (id: string): Promise<CharacterApi> => {
+export const getCharacter = async (id: string): Promise<Character> => {
   return axios
-    .get<CharacterApi>(`${characterUrl}/${id}`)
+    .get<Character>(`${characterUrl}/${id}`)
     .then((axiosResponse) => axiosResponse.data)
     .catch(() => null);
 };
 
 export const patchCharacter = async (
   id: string,
-  characterAttrs: Partial<CharacterApi>
+  characterAttrs: Partial<Character>
 ) => {
   return axios
-    .patch<CharacterApi>(`${characterUrl}/${id}`, characterAttrs)
+    .patch<Character>(`${characterUrl}/${id}`, characterAttrs)
     .then(() => true)
     .catch(() => false);
 };

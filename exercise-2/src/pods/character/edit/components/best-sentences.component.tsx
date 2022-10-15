@@ -4,12 +4,12 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import TextField from '@material-ui/core/TextField';
-import { CharacterVm } from 'pods/character/character.vm';
+import { Character } from 'pods/character/character.vm';
 import * as classes from './best-sentences.styles';
 
 interface Props {
-  character: CharacterVm;
-  setCharacter: React.Dispatch<React.SetStateAction<CharacterVm>>;
+  character: Character;
+  setCharacter: React.Dispatch<React.SetStateAction<Character>>;
 }
 
 export const BestSentencesComponent: React.FunctionComponent<Props> = (

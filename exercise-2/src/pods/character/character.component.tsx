@@ -1,5 +1,5 @@
 import React from 'react';
-import { CharacterVm } from './character.vm';
+import { Character } from './character.vm';
 import Alert from '@material-ui/lab/Alert';
 import Card from '@material-ui/core/Card';
 import * as classes from './character.styles';
@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { BestSentencesListComponent } from './components/best-sentences-list.component';
 
 interface Props {
-  character: CharacterVm;
+  character: Character;
 }
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {

@@ -1,9 +1,9 @@
-export interface CharacterEntityVm {
+export interface Character {
   id: string;
   name: string;
   species: string;
-  origin: string;
-  image: string;
   type: string;
   gender: string;
+  origin: string;
+  image: string;
 }
