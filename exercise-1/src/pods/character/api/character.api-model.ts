@@ -1,3 +1,19 @@
-import { CharacterEntityApi } from "pods/character-collection/api";
+export interface Character {
+  id: number;
+  name: string;
+  status: string;
+  species: string;
+  type: string;
+  gender: string;
+  origin: Url;
+  location: Url;
+  image: string;
+  episode: string[];
+  url: string;
+  created: string;
+}
 
-export interface CharacterApi extends CharacterEntityApi {}
+interface Url {
+  name: string;
+  url: string;
+}
