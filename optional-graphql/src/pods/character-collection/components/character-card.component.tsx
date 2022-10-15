@@ -6,12 +6,12 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
-import { CharacterEntityVm } from '../character-collection.vm';
+import { Character } from '../character-collection.vm';
 import * as classes from './character-card.styles';
 import Button from '@material-ui/core/Button';
 
 interface Props {
-  character: CharacterEntityVm,
+  character: Character;
   onSeeDetails: (id: string) => void;
 }
 
@@ -20,10 +20,7 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
 
   return (
     <Card>
-      <CardHeader
-        title={character.name}
-        subheader={character.origin}
-      />
+      <CardHeader title={character.name} subheader={character.origin} />
       <CardContent>
         <div className={classes.content}>
           <CardMedia
@@ -43,12 +40,13 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
         </div>
       </CardContent>
       <CardActions style={{ padding: '16px' }}>
-        <Button 
+        <Button
           className={classes.boldButton}
-          color="primary" 
-          variant="contained" 
-          onClick={() => onSeeDetails(character.id)}>
-            See Details
+          color="primary"
+          variant="contained"
+          onClick={() => onSeeDetails(character.id)}
+        >
+          See Details
         </Button>
       </CardActions>
     </Card>

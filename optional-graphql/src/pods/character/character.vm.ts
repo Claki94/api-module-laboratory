@@ -1,4 +1,4 @@
-export interface CharacterVm {
+export interface Character {
   id: string;
   name: string;
   status: string;
@@ -10,4 +10,3 @@ export interface CharacterVm {
   image: string;
   created: Date;
 }
-
